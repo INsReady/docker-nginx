@@ -2,7 +2,7 @@ FROM debian:jessie
 
 MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
-RUN echo "http://httpredir.debian.org/debian/ sid/main" >> /etc/apt/sources.list
+RUN echo "deb http://httpredir.debian.org/debian sid main" >> /etc/apt/sources.list
 
 ENV NGINX_VERSION 1.9.3-1~jessie
 
