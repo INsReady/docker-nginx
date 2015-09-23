@@ -4,7 +4,7 @@ MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
 RUN echo "deb http://httpredir.debian.org/debian sid main" >> /etc/apt/sources.list
 
-ENV NGINX_VERSION 1.9.4-1
+ENV NGINX_VERSION 1.9.5-1
 
 RUN apt-get update && \
     apt-get install -y ca-certificates nginx-full=${NGINX_VERSION} && \
