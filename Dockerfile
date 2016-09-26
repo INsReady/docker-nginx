@@ -1,12 +1,9 @@
-FROM debian:jessie
+FROM ubuntu:16.04
 
-ENV NGINX_VERSION 1.9.10-1~bpo8+3
-
-RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
-  && apt-get update \
+RUN apt-get update \
 	&& apt-get install --no-install-recommends --no-install-suggests -y \
 						ca-certificates \
-						nginx-full=${NGINX_VERSION} \
+						nginx-full \
 	&& rm -rf /var/lib/apt/lists/*
 
 # forward request and error logs to docker log collector
