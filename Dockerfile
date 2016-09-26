@@ -3,16 +3,10 @@ FROM debian:jessie
 ENV NGINX_VERSION 1.9.10-1~bpo8+3
 
 RUN echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
-	&& apt-get update \
+  && apt-get update \
 	&& apt-get install --no-install-recommends --no-install-suggests -y \
 						ca-certificates \
-						nginx=${NGINX_VERSION} \
-						nginx-module-xslt \
-						nginx-module-geoip \
-						nginx-module-image-filter \
-						nginx-module-perl \
-						nginx-module-njs \
-						gettext-base \
+						nginx-full=${NGINX_VERSION} \
 	&& rm -rf /var/lib/apt/lists/*
 
 # forward request and error logs to docker log collector
